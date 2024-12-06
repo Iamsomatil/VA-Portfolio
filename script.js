@@ -1,4 +1,4 @@
-// Initialize AOS (Animate On Scroll)
+
 AOS.init({
     duration: 1000,
     once: true,
@@ -15,7 +15,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile menu toggle
+
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -23,7 +23,7 @@ menuBtn.addEventListener('click', () => {
     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// Active link highlighting
+
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.nav-links a');
 
@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Skill bars animation
+
 const skillBars = document.querySelectorAll('.skill-bar');
 
 skillBars.forEach(bar => {
@@ -65,13 +65,13 @@ skillBars.forEach(bar => {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Show sending state
+   
     const submitButton = this.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
 
-    // Get form data
+  
     const formData = {
         name: this.querySelector('#name').value,
         email: this.querySelector('#email').value,
@@ -88,20 +88,19 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         to_email: 'samsonoakinsanya@gmail.com'
     })
     .then(function() {
-        // Show success message
+       
         const successMessage = document.createElement('div');
         successMessage.className = 'alert success';
         successMessage.textContent = 'Thank you! Your message has been sent successfully.';
         document.getElementById('contact-form').insertBefore(successMessage, submitButton);
         
-        // Remove success message after 5 seconds
         setTimeout(() => successMessage.remove(), 5000);
         
-        // Reset form
+        
         document.getElementById('contact-form').reset();
     })
     .catch(function(error) {
-        // Show error message
+        
         const errorMessage = document.createElement('div');
         errorMessage.className = 'alert error';
         errorMessage.textContent = 'Sorry, failed to send message. Please try again.';
@@ -119,7 +118,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 
-// Smooth scroll for navigation links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -131,7 +130,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
             
-            // Close mobile menu if open
+            
             if (window.innerWidth <= 768) {
                 navLinks.style.display = 'none';
             }
@@ -139,7 +138,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Portfolio hover effect
+
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 portfolioItems.forEach(item => {
@@ -152,7 +151,7 @@ portfolioItems.forEach(item => {
     });
 });
 
-// Responsive navigation
+
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
         navLinks.style.display = 'flex';
